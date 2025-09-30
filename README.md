@@ -25,27 +25,5 @@ Permette la registrazione/login utenti, la creazione di articoli e la gestione t
 - [bcrypt](https://www.npmjs.com/package/bcrypt)
 - [express-session](https://www.npmjs.com/package/express-session)
 
----
 
-## 📂 Struttura del progetto
 
-mio-blog-express/
-│
-├─ app.js
-├─ db/
-│   └─ init.js
-├─ middleware/
-│   └─ auth.js
-├─ routes/
-│   ├─ auth.js
-│   ├─ articles.js
-│   └─ index.js
-├─ views/
-│   ├─ index.ejs
-│   ├─ register.ejs
-│   ├─ login.ejs
-│   ├─ account.ejs
-│   ├─ new_article.ejs
-│   ├─ edit_article.ejs
-│   └─ article.ejs
-└─ package.json
