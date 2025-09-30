@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <div class="navbar">
+  <a href="/">🏠 Home</a>
+
+  <% if (!session || !session.userId) { %>
+    <!-- Se non loggato -->
+    <a href="/login">Login</a>
+    <a href="/register">Registrati</a>
+  <% } else { %>
+    <!-- Se loggato -->
+    <a href="/articles/new" class="btn">➕ Crea Articolo</a>
+    <a href="/logout">Logout</a>
+  <% } %>
+</div>

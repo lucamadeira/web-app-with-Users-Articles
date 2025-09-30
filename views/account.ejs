@@ -1,0 +1,18 @@
+
+<%- include('partials/header') %>
+<h1>Profilo di <%= username %></h1>
+<p><a href="/">Home</a> | <a href="/logout">Logout</a></p>
+
+<h2>I tuoi articoli</h2>
+<% if (articles.length === 0) { %>
+  <p>Non hai ancora scritto articoli.</p>
+<% } else { %>
+  <ul>
+    <% articles.forEach(a => { %>
+      <li><%= a.title %> - <a href="/articles/<%= a.id %>">Leggi / Modifica</a></li>
+    <% }) %>
+  </ul>
+<% } %>
+<p><a href="/articles/new">Scrivi un nuovo articolo</a></p>
+
+<%- include('partials/footer') %>

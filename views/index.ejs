@@ -1,0 +1,22 @@
+<%- include('partials/header') %>
+
+<h1>Benvenuto nel Blog</h1>
+
+<% if (user) { %>
+  <p>Ciao [usuario]! <a href="/account">Profilo</a> | <a href="/logout">Logout</a></p>
+<% } else { %>
+  <p><a href="/login">Login</a> | <a href="/register">Registrati</a></p>
+<% } %>
+
+<h2>Articoli</h2>
+<% if (articles.length === 0) { %>
+  <p>Nessun articolo ancora.</p>
+<% } else { %>
+  <ul>
+    <% articles.forEach(a => { %>
+      <li><%= a.title %> - <a href="/articles/<%= a.id %>">Leggi</a></li>
+    <% }) %>
+  </ul>
+<% } %>
+
+<%- include('partials/footer') %>

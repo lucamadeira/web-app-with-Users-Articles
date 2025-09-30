@@ -1,0 +1,28 @@
+
+<%- include('partials/header') %>
+<h1><%= article.title %></h1>
+<p><%= article.body %></p>
+<p>Autore: <%= article.username %></p>
+
+<% if (userId && userId === article.user_id) { %>
+  <a href="/articles/<%= article.id %>/edit">Modifica</a>
+  <a href="/articles/<%= article.id %>/delete">Elimina</a>
+<% } %>
+
+<h2>Commenti</h2>
+<ul>
+  <% comments.forEach(c => { %>
+    <li><%= c.username %>: <%= c.body %></li>
+  <% }) %>
+</ul>
+
+<% if (userId) { %>
+  <form action="/comments/new" method="POST">
+    <input type="hidden" name="article_id" value="<%= article.id %>">
+    <textarea name="content" placeholder="Scrivi un commento" required></textarea><br>
+    <button type="submit">Commenta</button>
+  </form>
+<% } %>
+<a href="/">Torna alla home</a>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,14 @@
+
+<%- include('partials/header') %>
+<h1>Modifica articolo</h1>
+<% if (error) { %>
+  <p style="color:red;"><%= error %></p>
+<% } %>
+
+<form action="/articles/<%= article.id %>/edit" method="POST">
+  <input type="text" name="title" value="<%= article.title %>" required><br>
+  <textarea name="content" required><%= article.content %></textarea><br>
+  <button type="submit">Salva modifiche</button>
+</form>
+<a href="/articles/<%= article.id %>">Annulla</a>
+<%- include('partials/footer') %>
